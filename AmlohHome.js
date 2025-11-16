@@ -1,3 +1,8 @@
+
+
+function toggleDarkMode() {
+// it will hold the darkmode and light mode effect into web screen for user better interection 
+     document.body.classList.toggle('dark-mode');
 class Bus {
       constructor(srNo, depTime, permitHolder, route, permitNo, permitValidity, orderNo, fitnessValidity) {
         this.srNo = srNo;
@@ -77,6 +82,4 @@ class Bus {
       });
     }
 
-
-
-
+}
