@@ -16,3 +16,12 @@ class Bus {
         return routeMatch && timeMatch;
       }
     }
+// Utility function to check if a departure time falls within a given time slot and this function alreadyy call in maches method of the bus class
+     function checkTimeSlot(depTime, slot) {
+      const time = parseFloat(depTime);
+      if (slot === "morning") return time >= 5 && time < 12;
+      if (slot === "afternoon") return time >= 12 && time < 17;
+      if (slot === "evening") return time >= 17 && time < 20;
+      if (slot === "night") return time >= 20 || time < 5;
+      return true;
+    }
