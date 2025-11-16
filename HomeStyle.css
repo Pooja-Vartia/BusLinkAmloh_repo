@@ -3,3 +3,22 @@
       font-weight: bold;
       font-size: 1.5rem;
     }
+     .form-section {
+      margin-top: 100px;
+    }
+    .nav-link {
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    .nav-link:hover {
+      transform: scale(1.05);
+      text-decoration: underline;
+    }
+    .medium-input {
+  width: 100%;
+} */
+
+/* .small-input {
+  width: 48%; /* Shrinks timing dropdown
+  display: block;
+} 
