@@ -171,6 +171,32 @@
 
   </div>
 </div>
+<div class="container my-5" data-aos="fade-up">
+  <h3 class="text-center mb-4">We Value Your Feedback</h3>
+  <div class="card p-4 shadow-sm">
+    <form action="submit_feedback.php" method="POST">
+      <div class="d-flex align-items-center mb-3"> 
+        <!-- 🖼️ User Image (Set via PHP) -->
+        <img src="<?php echo $userImagePath; ?>" alt="User" class="rounded-circle me-3" width="50" height="50" />
+        <span class="fw-semibold">Your thoughts help us improve!</span>
+      </div>
+
+      <!-- 💬 Feedback Textarea -->
+      <div class="mb-4">
+        <textarea class="form-control rounded-4 p-3" name="feedback" rows="5" placeholder="Write your feedback here..." required></textarea>
+      </div>
+
+      <!-- ✅ Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-success w-100 py-2 fw-bold">
+          ✅ Submit Feedback
+        </button>
+      </div>
+    </form>
+  </div> 
+ </div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
