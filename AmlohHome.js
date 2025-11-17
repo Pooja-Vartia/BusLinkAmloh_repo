@@ -1,8 +1,9 @@
 
-
+  AOS.init();
 function toggleDarkMode() {
-// it will hold the darkmode and light mode effect into web screen for user better interection 
-     document.body.classList.toggle('dark-mode');
+  // it will hold the darkmode and light mode effect into web screen for user better interection 
+  document.body.classList.toggle('dark-mode');
+}
 class Bus {
       constructor(srNo, depTime, permitHolder, route, permitNo, permitValidity, orderNo, fitnessValidity) {
         this.srNo = srNo;
@@ -48,7 +49,10 @@ class Bus {
     ];
 
     // Handles bus form submission by filtering matching buses based on route and time slot, then displays results.
-      document.getElementById("busForm").addEventListener("submit", function (e) {
+      document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("busForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const from = document.getElementById("from").value.trim().toUpperCase();
@@ -58,6 +62,8 @@ class Bus {
       const results = amlohBuses.filter(bus => bus.matches(from, to, timeSlot));
       showResults(results);
     });
+  }
+});
 
 // Displays filtered bus results in the HTML by dynamically creating and inserting formatted permit and route details.
 // Shows a fallback message if no matching buses are found for the selected criteria
@@ -81,5 +87,3 @@ class Bus {
         resultsDiv.appendChild(item);
       });
     }
-
-}
