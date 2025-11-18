@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="HomeStyle.css">
     <title>WATCH BUSES TIMMING schedule </title>
 </head>
-<body class="container">
+<body class="container bg-dark">
     <h1>BusLink Amloh Timming schedule</h1>
     <div class="lines">
         <div></div>
@@ -21,7 +21,7 @@
         <div></div>
     </div>
     <!-- Users can use to the below buttons as per their choice for check to the exact timeof the buses  -->
-    <div class="buttons">
+    <div class="buttons ">
         <button onclick="filterBySlot('morning')" class="btn btn-dark">MORNING</button>
         <button onclick="filterBySlot('afternoon')" class="btn btn-dark">AFTERNOON</button>
         <button onclick="filterBySlot('evening')" class="btn btn-dark">EVENING</button>
@@ -30,6 +30,17 @@
 
     <div class="instructions">
         <p>Click on the any accecpted period to see the route detail report in table vies format.</p>
+        <p>Click any duration ("Time" field values) from the route details table to see full details of the current bus at the bottom of the page.</p>
+        <p>Click any given "Route Name" from the route details of the route (all the buses on that route) at the bottom of the page.</p>
     </div>
+    <table id="busTable">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Route Name</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="details"></div>
 </body>
 </html>
