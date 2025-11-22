@@ -87,3 +87,30 @@ class Bus {
         resultsDiv.appendChild(item);
       });
     }
+
+    const form = document.getElementById("feedbackForm");
+  const feedbackText = document.getElementById("feedbackText");
+  const feedbackList = document.querySelector("#feedbackList ul");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+
+    // Get user input
+    const text = feedbackText.value.trim();
+
+    if (text) {
+      // Create a new list item
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = text;
+
+      // Append to feedback list
+      feedbackList.appendChild(li);
+
+      // Clear textarea
+      feedbackText.value = "";
+
+      // Optional: show a thank-you message
+      alert("Thank you for your feedback!");
+    }
+  });
