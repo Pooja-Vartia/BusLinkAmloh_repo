@@ -6,6 +6,34 @@
     <title>Track Bus Timming </title>
 </head>
 <body>
+    <h1>BusLink Amloh Bus Timings</h1>
+    <div class="lines">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="buttons">
+        <button onclick="filterBySlot(morning)">MORNING</button>
+        <button onclick="filterBySlot(afternoon)">AFTERNOON</button>
+        <button onclick="filterBySlot(evevning)">EVENING</button>
+        <button onclick="filterBySlot(night)">NIGHT</button>
+    </div>
     
+  <div class="instructions">
+    <p>Click on the accepted time period to see the route detail report in table view format.</p>
+    <p>Click any duration ("Time" field values) from the route detail table to see full details of the current bus at the bottom of the page.</p>
+    <p>Click any given "Route Name" from the route detail table to see full details of the route (all the buses on that route) at the bottom of the page.</p>
+ </div>
+ <table id="busTable">
+    <thead>
+       <tr>
+        <th>Time</th>
+ <th>Route Name</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    </thead>
+ </table>
+ <div id="details"></div>
 </body>
-</html>
+</html> 
