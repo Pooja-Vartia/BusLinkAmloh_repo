@@ -11,6 +11,8 @@
   <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />  
   <link rel="stylesheet" href="HomeStyle.css">
+  <link rel="stylesheet" href="AmlohHome.html">
+  <link rel="stylesheet" href="TopNavbar.html">
      <style>
       body { font-family: Arial, sans-serif; padding: 20px; }
     h1 { text-align: center; margin-top: 10%;}
@@ -32,43 +34,8 @@
   </style>
 </head>
 <body class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm ">
-  <div class="container-fluid">
-    <!--Toggler Burger Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"  aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!--Home Icon -->
-    <a class="navbar-brand"  href="AmlohHome.html" >
-      <i class="fas fa-road w-bold text-warning"></i> BusLinkAmloh
-    </a>
-
-    <!-- Collapsible Links -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-clock me-1"></i> <span class="link-text">Timming</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-bus me-1"></i> <span class="link-text">Buses</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-route me-1"></i> <span class="link-text">Routes</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-map-marker-alt me-1"></i> <span class="link-text">Bus Stands</span></a>
-        </li>
-      </ul>
-
-      <!-- Dark Mode Toggle -->
-      <button class="btn btn-outline-dark ms-auto" onclick="toggleDarkMode()" title="Toggle dark mode">
-        <i class="fas fa-adjust w-bold "></i>
-      </button>
-    </div>
-  </div>
-</nav>
-    <h1 class="text-warning fw-bold" >BusLink Amloh Bus Timings</h1>
+ <div id="navbar-placeholder"></div>
+    <h1 class="text-warning fw-bold mt-5" >BusLink Amloh Bus Timings</h1>
     <div class="row mt-5">
         <div class="col-lg-6">
             <div class="lines">
@@ -117,11 +84,16 @@
  <!-- AOS Animation JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+   fetch("TopNavbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
   AOS.init({
     duration: 800, // animation duration in ms
     once: true      // whether animation should happen only once
   });
 </script>
-
+  <script src="AmlohHome.js"></script>
 </body>
 </html> 
