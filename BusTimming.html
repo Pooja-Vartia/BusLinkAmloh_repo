@@ -68,41 +68,41 @@
     </div>
   </div>
 </nav>
-    <h1 class="text-warning " >BusLink Amloh Bus Timings</h1>
-    <div class="row">
+    <h1 class="text-warning fw-bold" >BusLink Amloh Bus Timings</h1>
+    <div class="row mt-5">
         <div class="col-lg-6">
             <div class="lines">
-    <p id="para">
+    <p id="para" data-aos="fade-right">
         BusLinkAmloh brings you reliable bus schedules, connecting every corner of Amloh with ease.
         Morning to night, our services ensure you never miss a journey when it matters most.
         Safe routes, trusted buses, and convenient stops designed for your comfort and peace of mind.
         Travel smarter with BusLinkAmloh — your time, your route, your trusted companion.
     </p>
 </div></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="flip-left">
             <img src="busHeaderImg.png" class="img img-fluid w-50" alt="loading">
         </div>
     </div>
     <div class="buttons row">
-        <div class="col-6">
-            <button class="col-12 " onclick="filterBySlot(morning)">MORNING</button>
-            <button class="col-12 " onclick="filterBySlot(afternoon)">AFTERNOON</button>
+        <div class="col-6" >
+            <button class="col-12 " onclick="filterBySlot(morning)" data-aos="zoom-in">MORNING</button>
+            <button class="col-12 " onclick="filterBySlot(afternoon)" data-aos="zoom-out">AFTERNOON</button>
             
         </div>
         <div class="col-6">
-            <button class="col-12 " onclick="filterBySlot(evevning)">EVENING</button>
-            <button class="col-12 " onclick="filterBySlot(night)">NIGHT</button>
+            <button class="col-12 " onclick="filterBySlot(evevning)" data-aos="zoom-out">EVENING</button>
+            <button class="col-12 " onclick="filterBySlot(night)" data-aos="zoom-in">NIGHT</button>
         </div>
 
 </div>
 
     
-  <div class="instructions text-secondary " >
+  <div class="instructions text-secondary " data-aos="fade-up" >
     <p>Click on the accepted time period to see the route detail report in table view format.
     Click any duration ("Time" field values) from the route detail table to see full details of the current bus at the bottom of the page.
     Click any given "Route Name" from the route detail table to see full details of the route (all the buses on that route) at the bottom of the page.</p>
  </div>
- <table id="busTable">
+ <table id="busTable" data-aos="fade-up" >
     <thead>
        <tr>
         <th>Time</th>
@@ -113,5 +113,15 @@
     </thead>
  </table>
  <div id="details"></div>
+
+ <!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // animation duration in ms
+    once: true      // whether animation should happen only once
+  });
+</script>
+
 </body>
 </html> 
