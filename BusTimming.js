@@ -34,4 +34,17 @@ const timeSlots = {
         }
         return time >= start && time <= end;
       });
+
+// Clear to the previous data from row and add to the next fresh filtered data into body of the table 
+ const tbody = document.querySelector("#busTable tbody");
+      tbody.innerHTML = "";
+      filtered.forEach(bus => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td onclick="showBusDetails('${bus.time}')">${bus.time}</td>
+          <td onclick="showRouteDetails('${bus.route}')">${bus.route}</td>
+        `;
+        tbody.appendChild(row);
+      });
+
     }
