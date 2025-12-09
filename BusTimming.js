@@ -61,3 +61,16 @@ const timeSlots = {
         <p><strong>Permit Number:</strong> ${bus.permit}</p>
       `;
     }
+
+    // this will filtered to the given route with busData database array and then result inject into table 
+      function showRouteDetails(route) {
+      const buses = busData.filter(b => b.route === route);
+      let html = `<h3>Route Details: ${route}</h3>`;
+      buses.forEach(bus => {
+        html += `
+          <p><strong>Time:</strong> ${bus.time}, <strong>Bus Name:</strong> ${bus.busName}, 
+          <strong>Bus Number:</strong> ${bus.busNumber}, <strong>Permit:</strong> ${bus.permit}</p>
+        `;
+      });
+      document.getElementById("details").innerHTML = html;
+    }
