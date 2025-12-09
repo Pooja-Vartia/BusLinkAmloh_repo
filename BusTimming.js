@@ -4,3 +4,34 @@ const timeSlots = {
       evening: { start: "17:00", end: "20:59" },
       night: { start: "21:00", end: "04:59" }
     };
+
+    // Create an array which holdes to the timming details into objects form
+    const busData = [
+  // Morning
+  { time: "05:35", route: "Amloh to Patiala", busName: "PRTC", busNumber: "PB11AB1234", permit: "PR123456" },
+  { time: "07:00", route: "Amloh to Ludhiana,Jalandhar via Bhadson", busName: "PRTC", busNumber: "PB11GH3456", permit: "PR112233" },
+// Afternoon
+  { time: "12:15", route: "Amloh to Khanna", busName: "Tiwana Ways", busNumber: "PB11MN5678", permit: "TW998877" },
+  { time: "13:30", route: "Amloh to Ludhiana", busName: "PRTC", busNumber: "PB11OP9012", permit: "PR334455" },
+  { time: "15:00", route: "Amloh to Patiala", busName: "PRTC", busNumber: "PB11QR3456", permit: "PR556677" },
+  // Evening
+  { time: "16:30", route: "Amloh to Khanna", busName: "Tiwana Ways", busNumber: "PB11ST7890", permit: "TW223344" },
+  { time: "18:00", route: "Amloh to Ludhiana", busName: "PRTC", busNumber: "PB11UV1234", permit: "PR667788" },
+  // Night
+  { time: "19:30", route: "Amloh to Patiala", busName: "PRTC", busNumber: "PB11WX5678", permit: "PR889900" },
+  { time: "21:00", route: "Amloh to Khanna", busName: "Tiwana Ways", busNumber: "PB11YZ9012", permit: "TW112233" },
+  { time: "23:45", route: "Amloh to Ludhiana", busName: "PRTC", busNumber: "PB11AA3456", permit: "PR334455" },
+  { time: "03:15", route: "Amloh to Patiala", busName: "PRTC", busNumber: "PB11BB7890", permit: "PR556677" }
+
+];
+// this function filter to the timming slots 
+ function filterBySlot(slot) {
+      const { start, end } = timeSlots[slot];
+      const filtered = busData.filter(bus => {
+        const time = bus.time;
+        if (slot === "night") {
+          return time >= start || time <= end;
+        }
+        return time >= start && time <= end;
+      });
+    }
