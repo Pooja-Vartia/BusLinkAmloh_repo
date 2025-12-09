@@ -48,3 +48,16 @@ const timeSlots = {
       });
 
     }
+
+    // Firstly this mehod catch to the selected time and then checked to the time with busData database array 
+     function showBusDetails(time) {
+      const bus = busData.find(b => b.time === time);
+      document.getElementById("details").innerHTML = `
+        <h3>Bus Details</h3>
+        <p><strong>Time:</strong> ${bus.time}</p>
+        <p><strong>Route:</strong> ${bus.route}</p>
+        <p><strong>Bus Name:</strong> ${bus.busName}</p>
+        <p><strong>Bus Number:</strong> ${bus.busNumber}</p>
+        <p><strong>Permit Number:</strong> ${bus.permit}</p>
+      `;
+    }
