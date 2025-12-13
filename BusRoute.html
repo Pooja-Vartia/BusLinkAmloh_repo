@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" /> 
+    <title>Bus Route</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        #map{
+            height: 400px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        #controls{
+            margin-bottom: 10px;
+        }
+        #intro{
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+    <h2 class="mt-5">BusLink Amloh Route Planner</h2>
+    <!-- Route introduction section -->
+     <div id="intro">
+        <p>
+            <strong>BusLink Amloh</strong> is a smart travel assistent for passengers commuting between 
+            <strong>Patiala, Amloh, Khanna, Ludhiana, and Jalandhar </strong>this app helps users plan their journey by showing an interactive map and calculative estimated travel time based on selected stops. it combines official bus schedule wih Google Maps routing to give accurate and helpful travel info.
+        </p>
+     </div>
+     <div id="map"></div>
+     <div id="controls">
+        <label>From:
+            <input id="forms" type="text" placeholder="e.g. Ludhiana ">
+        </label>
+        <button type="button" onclick="calculatedRoute()">Show Route</button>
+     </div>
+<div id="output"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+
+  
+  <script>
+
+
+ let map, directionsService, directionsRenderer;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 30.8385, lng: 75.1746 }, 
+// Centered near Amloh
+        zoom: 9,
+      });
+
+      directionsService = new google.maps.DirectionsService();
+      directionsRenderer = new google.maps.DirectionsRenderer();
+      directionsRenderer.setMap(map);
+    }
+
+    function calculateRoute() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+
+      const request = {
+        origin: from,
+        destination: to,
+        travelMode: google.maps.TravelMode.DRIVING,
+      };
+
+      directionsService.route(request, function(result, status) {
+        if (status === "OK") {
+          directionsRenderer.setDirections(result);
+          const duration = result.routes[0].legs[0].duration.text;
+          document.getElementById("output").innerHTML = 
+            `<strong>Estimated Travel Time:</strong> ${duration}`;
+        } else {
+          document.getElementById("output").innerHTML = 
+            "Route not found. Please check locations.";
+        }
+      });
+    }
+
+
+  fetch("TopNavbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+</script>
+
+  <script>
+    AOS.init();
+    </script>
+    <script src="AmlohHome.js"></script>
+
+     <!-- 🔑 Google Maps API Key -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcdsd-HqN_FiS1tgIbSWDFEmzNT3kTGXE&callback=initMap">
+  </script>
+</body>
+</html>
