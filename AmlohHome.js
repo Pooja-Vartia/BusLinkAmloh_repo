@@ -17,7 +17,8 @@ class Bus {
       }
 
       matches(from, to, timeSlot) {
-        const routeMatch = this.route.includes(from) && this.route.includes(to);
+        const routeMatch = this.route.toUpperCase().includes(from.toUpperCase())
+         && this.route.toUpperCase().includes(to.toUpperCase());
         const timeMatch = checkTimeSlot(this.depTime, timeSlot);
         return routeMatch && timeMatch;
       }
@@ -34,18 +35,18 @@ class Bus {
 
     // this array named amlohBuses will containe the data about buses into each new object 
     const amlohBuses = [
-      new Bus(1, "6.00", "PRTC", "PTA-LDH", "70/78/89", "27.07.2024", "PB11BT6255", "31.03.2024"),
-      new Bus(2, "6.55", "HARTAL", "PTA-LDH", "276/89/97", "01.07.2024", "PB11BR1865", "13.02.2024"),
-      new Bus(3, "7.00", "PRTC", "PTA-LDH", "246/89/97", "01.07.2024", "PB11BT6259", "13.02.2024"),
-      new Bus(4, "7.10", "PRTC", "PTA-LDH", "226/89/97", "01.07.2024", "PB11BT6258", "13.02.2024"),
-      new Bus(5, "7.20", "PRTC", "PTA-LDH", "236/89/97", "01.07.2024", "PB11BT6257", "13.02.2024"),
-      new Bus(6, "7.25", "AMRITSAR SAHIB PVT.", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(7, "7.45", "AZURA SAHIB PVT.", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(9, "8.15", "D.J.D MOTOR", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(11, "8.45", "AMRITSAR SAHIB PVT.", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(25, "12.15", "D.J.D HIGHWAYS", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(29, "1.15", "AMRITSAR SAHIB PVT.", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
-      new Bus(32, "2.00", "D.J.D HIGHWAYS", "PTA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(1, "6.00", "PRTC", "PATIALA-LUDHIANA", "70/78/89", "27.07.2024", "PB11BT6255", "31.03.2024"),
+      new Bus(2, "6.55", "HARTAL", "PATIALA-LUDHIANA", "276/89/97", "01.07.2024", "PB11BR1865", "13.02.2024"),
+      new Bus(3, "7.00", "PRTC", "PATIALA-LUDHIANA", "246/89/97", "01.07.2024", "PB11BT6259", "13.02.2024"),
+      new Bus(4, "7.10", "PRTC", "PATIALA-LUDHIANA", "226/89/97", "01.07.2024", "PB11BT6258", "13.02.2024"),
+      new Bus(5, "7.20", "PRTC", "PATIALA-LUDHIANA", "236/89/97", "01.07.2024", "PB11BT6257", "13.02.2024"),
+      new Bus(6, "7.25", "AMRITSAR SAHIB PVT.", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(7, "7.45", "AZURA SAHIB PVT.", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(9, "8.15", "D.J.D MOTOR", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(11, "8.45", "AMRITSAR SAHIB PVT.", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(25, "12.15", "D.J.D HIGHWAYS", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(29, "1.15", "AMRITSAR SAHIB PVT.", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
+      new Bus(32, "2.00", "D.J.D HIGHWAYS", "PATIALA-KHANNA", "567/64/C/92", "01.07.2024", "PB13T-9999", "31.03.2024"),
     ];
 
     // Handles bus form submission by filtering matching buses based on route and time slot, then displays results.
