@@ -17,8 +17,8 @@
 <body>
 <div id="navbar-placeholder"></div>
 
-<div class="container d-flex justify-content-center" id="HeaderName" >
-  <div class="col-md-8">
+<div class="container-fluid d-flex justify-content-center" id="HeaderName" >
+  <div class="col-md-8" id="topForm">
     <h1 class="mt-5 text-center fw-bold text-warning mt-5">Plan Your Bus Journey</h1>
     <form id="busForm" class="bus-form">
       <div class="row mb-3" data-aos="fade-right">
@@ -43,16 +43,19 @@
         </select>
       </div>
 
-      <div class="text-center" data-aos="flip-up">
-        <button type="submit" class="btn btn-success center  py-2"  id="ShowResult">✅ Done</button>
+      <div class="text-center" data-aos="flip-up" id="DoneBtn">
+        <button type="submit" class="btn btn-success center bg-warning  py-2"  id="ShowResult">
+           Done
+        </button>
       </div>
     </form>
   </div>
 </div>
-<div id="results" class="mx-5"></div>
+<div id="results" class="container-fluid " style="background-color: rgba(20, 208, 48, 0.125);"></div>
   </div>
+
   <!-- 📘 About Section – Interactive Accordion -->
-<div class="container my-5" data-aos="fade-up">
+<div class="container my-5" id="detailedBus" data-aos="fade-up">
   <h2 class="text-center mb-4">About BusLink Amloh</h2>
   <img src="busHeaderImg.png" alt="loading" class="img img-fluid"  id="bigBus" >
   <p class="text-center  mb-4">
@@ -137,7 +140,7 @@
 
   </div>
 </div>
-<div class="container my-5" data-aos="fade-up">
+<div class="container-fluid p-5 my-5 " data-aos="fade-up" id="feedbackform">
   <h3 class="text-center mb-4">We Value Your Feedback</h3>
   <div class="card p-4 shadow-sm">
      <form id="feedbackForm">
@@ -156,7 +159,7 @@
 
       <!-- ✅ Submit Button -->
       <div class="text-center">
-        <button type="submit" class="btn btn-warning w-50 py-2 text-light">
+        <button type="submit" class="btn btn-dark w-50 py-2 text-light">
           Submit Feedback
         </button>
       </div>

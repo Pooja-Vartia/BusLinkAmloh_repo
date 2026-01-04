@@ -1,3 +1,6 @@
+  #topForm div{
+    margin-top: 5%;
+  }
   .navbar-brand {
       font-weight: bold;
       font-size: 1.5rem;
@@ -32,9 +35,28 @@
   background-color: #1f1f1f;
 }
 #HeaderName{
+  background-image: url(busBackground2.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 89vh;
   margin-top: 5%;
+  color: white;
 }
 
+#HeaderName label{
+  font-weight: bold;
+  font-size: larger;
+}
+
+
+#DoneBtn button{
+  margin-top: 20px;
+  border: none;
+  font-weight: bold;
+  /* background-color: rgba(255, 255, 0, 0.83); */
+}
 
 .dark-mode .form-control,
 .dark-mode .form-select {
@@ -58,9 +80,59 @@
   background-color: #1f1f1f;
   color: #ccc;
 }
+
+#feedbackform{
+background-color: rgba(33, 33, 33, 0.638);
+height: 100vh;
+}
+#feedbackform .card div{
+border: none;
+}
 #bigBus{
   margin: 0% 2%;
 }
 #ShowResult{
   width: 30%;
+}
+#results {
+  background-color: #66666677;
+  margin: 0% auto;
+}
+#detailedBus h2{
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ font-size: xx-large;
+}
+#TimmingBackground{
+  background-image: url(busBackground2.jfif);
+  background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+color: white;
+        background-attachment: fixed; 
+         height: 100vh;
+         width: 100%; overflow-y: auto; 
+          padding: 20px; font-family: Arial, sans-serif;
+/}
+#TimmingBackground h1{
+  font-size:60px;
+  height: 30vh;
+  color: white;
+}
+#buttongrid p{
+  color: #ffffff;
+  font-weight: bold;
+
+-webkit-text-stroke: 0.5px black;}
+#buttongrid button{
+  background-color: rgba(124, 226, 124, 0.548);
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+#buttongrid button:hover{
+  background-color: white;
+  color: rgba(46, 163, 46, 0.579);
 }
