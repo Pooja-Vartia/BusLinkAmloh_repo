@@ -273,39 +273,21 @@ const timeSlots = {
       filtered.forEach(bus => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td style="padding-right:50px;"  onclick="showBusDetails('${bus.time}')">
-          <button onclick="handleButtonClick('${bus.time}')">Select</button>
+          <td style="paddings:90px;"  onclick="showBusDetails('${bus.time}')">
 
           ${bus.time}</td>
           <td onclick="showRouteDetails('${bus.route}')">${bus.route}</td>
+          <td onclick="showRouteDetails('${bus.busName}')">${bus.busName}</td>
+          <td onclick="showRouteDetails('${bus.busNumber}')">${bus.busNumber}</td>
+
         `;
         tbody.appendChild(row);
       });
 
     }
 
-    // Firstly this mehod catch to the selected time and then checked to the time with busData database array 
-     function showBusDetails(time) {
-      const bus = busData.find(b => b.time === time);
-      document.getElementById("details").innerHTML = `
-        <h3>Bus Details</h3>
-        <p><strong>Time:</strong> ${bus.time}</p>
-        <p><strong>Route:</strong> ${bus.route}</p>
-        <p><strong>Bus Name:</strong> ${bus.busName}</p>
-        <p><strong>Bus Number:</strong> ${bus.busNumber}</p>
+    
 
-      `;
-    }
+    
 
-    // this will filtered to the given route with busData database array and then result inject into table 
-      function showRouteDetails(route) {
-      const buses = busData.filter(b => b.route === route);
-      let html = `<h3>Route Details: ${route}</h3>`;
-      buses.forEach(bus => {
-        html += `
-          <p><strong>Time:</strong> ${bus.time}, <strong>Bus Name:</strong> ${bus.busName}, 
-          <strong>Bus Number:</strong> ${bus.busNumber}</p>
-        `;
-      });
-      document.getElementById("details").innerHTML = html;
-    }
+    

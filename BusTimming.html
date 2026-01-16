@@ -14,52 +14,61 @@
  
 <script src="BusTimming.js"></script>
 </head>
-<body class="container  dark-mode " id="TimmingBackground">
- <div id="navbar-placeholder"></div>
- 
- <div>
-   <h1 class=" fw-bold d-flex align-items-center justify-content-start " >
-    BUS TIME TABLE</h1>
-   <div class="buttons row " id="buttongrid">
-     <div class="col-8 col-md-8 col-sm-12 col-xs-12 d-flex flex-column gap-2" >
-       <button class="col-12 btn " onclick="filterBySlot('morning')" data-aos="zoom-in">MORNING</button>
-       <button class="col-12 btn " onclick="filterBySlot('afternoon')" data-aos="zoom-out">AFTERNOON</button>
-       <button class="col-12 btn " onclick="filterBySlot('evening')" data-aos="zoom-out">EVENING</button>
-       <button class="col-12 btn " onclick="filterBySlot('night')" data-aos="zoom-in">NIGHT</button>
-      <div class="col-12 d-flex flex-column gap-2">
-         <table id="busTable" data-aos="fade-up">
-           <thead>
-             <tr>
-               <th>Time</th>
-               <th>Route Name</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        
-        <div id="details"></div>
-      </div>
-      
-      <div class="col-lg-4" data-aos="flip-left">
-        <!-- <img src="busHeaderImg.png" class="img img-fluid w-50" alt="loading"> -->
-       
-        <h4>Click on the accepted time period to see the route detail report in table view format.
-        Click any duration ("Time" field values) from the route detail table to see full details of the current bus at the bottom of the page.
-        Click any given "Route Name" from
-         the route detail table to see full details of the route (all the buses on that route) at the bottom of the page.</h4>
-            </div>
-      <div class="instructions  " data-aos="fade-up" >
-      </div>
+<body class="container-fluid dark-mode" >
+  <div id="navbar-placeholder"></div>
+  <!-- 1 row = 2 x columns -->
+  <div class="row"  id="TimmingBackground">
+    <h1 class="container mt-5 mb-2 text-center ">NextStop Navigator</h1>
+    <!-- div for buttons -->
+    <div  id="buttongrid" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5 p-5">
+      <h3 class="text-center">"Ready to choose the best bus option?</h3>
+      <button class="col-12 btn m-1 p-2" onclick="filterBySlot('morning')" data-aos="zoom-in">MORNING</button>
+      <button class="col-12 btn m-1 p-2" onclick="filterBySlot('afternoon')" data-aos="zoom-out">AFTERNOON</button>
+      <button class="col-12 btn m-1 p-2" onclick="filterBySlot('evening')" data-aos="zoom-out">EVENING</button>
+      <button class="col-12 btn m-1 p-2" onclick="filterBySlot('night')" data-aos="zoom-in">NIGHT</button>
     </div>
-    
+    <!-- div for instructions -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ms-auto"   id="infoSection">
+      <h4 class="text p-3 "  id="instructions">Click on the accepted time period to see the route detail report in table view format.
+        Click any duration ("Time" field values) from the route detail table to see full details of the current bus at the bottom of the page.
+       </h4>
+      </div>
   </div>
-  
+</div>
 </div> 
+   <div class="row" id="busTable" style="background-color: #53748f;">
+     <table class="col-lg-12 gap-5 text" >
+     <thead>
+       <tr data-aos="flip-up">
+         <th class="col-lg-3"><h1>Time</h1> </th>
+         <th class="col-lg-3"> <h1>Route Name</h1></th>
+         <th class="col-lg-3"> <h1>Bus Name</h1></th>
+         <th class="col-lg-3"> <h1>Bus Number</h1></th>
+        </tr>
+      </thead>
+      <tbody class="col-lg-12" ></tbody>
+    </table>
 
-    
+  <div class="col-lg-4 mt-5" id="details " ></div>
+  <h1>"Plan Smarter with Time Slots"</h1>
+  <div  class="p-5 mb-5" id="introductionalPart" >    
+    <h1>Need quick details to manage your schedule?</h1>
+ <ol>
+  <li>Quickly check bus schedules divided into Morning, Afternoon, Evening, and Night slots.</li>
+  <li>See clear details like bus time, route name, bus name, and bus number in one place.</li>
+  <li>Click on any time slot to instantly view the full schedule in table format.</li>
+  <li>Organized layout makes it simple to compare different buses and choose the best option.</li>
+  <li>Easy navigation ensures passengers don’t waste time searching for information.</li>
+  <li>Helpful for students, exam aspirants, and daily travelers to plan their journey smoothly.</li>
+  <li>Reduces confusion by showing all important details in a structured way.</li>
+  <li>Makes travel planning smarter, faster, and more reliable for everyone.</li>
+</ol>
+  
+</div>
+<div>
+  
 
- <!-- AOS Animation JS -->
+<!-- AOS Animation JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
    fetch("TopNavbar.html")

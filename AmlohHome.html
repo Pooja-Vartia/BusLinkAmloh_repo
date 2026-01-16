@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="BusTimming.html">
 </head>
 <body>
-<div id="navbar-placeholder"></div>
+<div id="navbar-placeholder" ></div>
 
 <div class="container-fluid d-flex justify-content-center" id="HeaderName" >
   <div class="col-md-8" id="topForm">
-    <h1 class="mt-5 text-center fw-bold text-warning mt-5">Plan Your Bus Journey</h1>
+    <h1 class="mt-5 text-center fw-bold text-warning">Plan Your Bus Journey</h1>
     <form id="busForm" class="bus-form">
       <div class="row mb-3" data-aos="fade-right">
         <div class="col-md-6">
@@ -42,28 +42,39 @@
           <option value="night">Night</option>
         </select>
       </div>
-
+      
       <div class="text-center" data-aos="flip-up" id="DoneBtn">
         <button type="submit" class="btn btn-success center bg-warning  py-2"  id="ShowResult">
-           Done
+          Done
         </button>
       </div>
     </form>
   </div>
 </div>
 <div id="results" class="container-fluid " style="background-color: rgba(20, 208, 48, 0.125);"></div>
-  </div>
+</div>
 
-  <!-- 📘 About Section – Interactive Accordion -->
-<div class="container my-5" id="detailedBus" data-aos="fade-up">
+<!-- 📘 About Section – Interactive Accordion -->
+<div class="container my-5" id="detailedBus" data-aos="zoom-out" >
   <h2 class="text-center mb-4">About BusLink Amloh</h2>
-  <img src="busHeaderImg.png" alt="loading" class="img img-fluid"  id="bigBus" >
-  <p class="text-center  mb-4">
+  <p>BusLink Amloh makes planning your journey simpler and smarter. Designed especially for
+     passengers traveling through Amloh, the app provides complete details about buses, routes,
+      and timings in one place. On the first screen, users can quickly check which
+       buses are available from Amloh to destinations like Patiala, Ludhiana, Khanna, 
+       Bhadson, and Dhoraha, along with departure times. The second screen organizes 
+       schedules into four convenient slots—morning, afternoon, evening, and night—showing each bus’s timing,
+        name, route, and number so travelers can easily choose the best option. The third screen offers a
+         map‑style interface, similar to Google Maps, that highlights routes and estimated travel times, 
+         helping passengers plan efficiently. Whether you are a student, a local visitor, a government exam 
+         aspirant, or someone arriving from outside, BusLink Amloh saves time, reduces confusion, and makes 
+         your journey smoother and more reliable.</p>
+  <img src="DeviceResponseSite.png" alt="loading" class="img img-fluid"  id="bigBus" style="width: 100%;" >
+  <p class="text  mb-4 mt-5">
     BusLink Amloh is a web-based app designed to help users find local bus routes and schedules quickly. It reduces long waits, supports students and commuters, and makes public transport more accessible.
   </p>
-
+  
   <div class="accordion" id="aboutAccordion">
-
+    
     <!-- ❗️ Problem Statement -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -109,7 +120,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- 🎯 Who Is It Designed For? -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingFour">
@@ -123,7 +134,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- 💡 What Makes BusLink Unique? -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingFive">
@@ -140,41 +151,123 @@
 
   </div>
 </div>
-<div class="container-fluid p-5 my-5 " data-aos="fade-up" id="feedbackform">
-  <h3 class="text-center mb-4">We Value Your Feedback</h3>
-  <div class="card p-4 shadow-sm">
-     <form id="feedbackForm">
-      <div class="d-flex align-items-center mb-3">
-        <span class="fw-semibold">Your thoughts help us improve!</span>
-      </div>
 
-      <!-- 💬 Feedback Textarea -->
-      <div class="mb-4">
-        <textarea class="form-control rounded-4 p-3" 
-                  id="feedbackText" 
-                  rows="5" 
-                  placeholder="Write your feedback here..." 
-                  required></textarea>
-      </div>
+<h3 class="text m-5 text-success">“Wondering which bus from Amloh will save you the most time?” <br>
+“Looking for the easiest route from Amloh right now?”<br>
+“Curious how quickly you can reach Patiala, Ludhiana, or Khanna from Amloh?”</h3>
+   
 
-      <!-- ✅ Submit Button -->
-      <div class="text-center">
-        <button type="submit" class="btn btn-dark w-50 py-2 text-light">
-          Submit Feedback
-        </button>
-      </div>
-    </form>
-<!-- 📌 Feedback Display Section -->
-    <div id="feedbackList" class="mt-4">
-      <h5 class="text-secondary">Previous Feedback:</h5>
-      <ul class="list-group"></ul>
+
+
+<!-- carousel slides -->
+ <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-aos="zoom-in">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="busDetailFirstScreen.png" class="d-block w-100" alt="loading">
+      <div class="carousel-caption d-none d-md-block">
+         </div>
     </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="ResultBusLink.png" class="d-block w-100" alt="loading">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="DeviceResponseSite.png" class="d-block w-100" alt="loading">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h2 class="text m-5 py-2" data-aos="fade-right" data-bs-interval="6000" >Our platform is designed for passengers, students, locals, and government 
+  aspirants who rely on buses every day. We make your journey simple, fast, and stress‑free.</h2>
 
 
-  </div> 
- </div>
-<div class="container-fluid my-5" data-aos="fade-up">
-  <h3 class="text-center mb-4">Helpful Contacts – Bus Info & Support</h3>
+<div id="IntroWithImg" class=" container text text-center justify-content-center">
+  <div class="row  m-5 col-lg-12 col-md-12 col-sm-12 col-xs-12" data-aos="flip-up">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <img src="STUDENTbuslink.png" alt="loading" class="img img-fluid" style="object-fit: contain;">
+    </div>
+    <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 mt-5 justify-content-center">
+      <h2 class="text " >👨‍🎓 Student
+        “College rides made simple.”</h2>
+      </div>
+    </div>
+    
+    <div class="row m-5 col-lg-12 col-md-12 col-sm-12 col-xs-12" data-aos="fade-right">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+        <h2> 🧑‍💼 Exam Aspirant
+          “Reach on time, stay focused.”</h2>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <img src="Goverjobaspirants.png" alt="" class="img img-fluid " style="object-fit: contain;">
+        </div>
+      </div>
+      <div class="row  m-5 col-lg-12 col-md-12 col-sm-12 col-xs-12" data-aos="flip-up">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <img src="visitersBuslink.png" alt="" class="img img-fluid w-30" style="object-fit: fill;">
+        </div>
+        <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4">
+          <h2>
+            🌍 Outer Traveler
+            “Exploring Amloh, stress-free.”
+          </h2>
+        </div>
+      </div>
+      <div class="row  m-5 col-lg-12 col-md-12 col-sm-12 col-xs-12" data-aos="fade-up">
+        <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4">
+          <h2>
+            🏡 Local
+            “My route. My time. My way.”
+            
+          </h2>
+          
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <img src="localbusAudience.JPG" alt="" class="img img-fluid " style="object-fit: contain;">
+        </div>
+      </div>
+    </div>
+<div class="container-fluid p-5 my-5 row" data-aos="fade-up" id="feedbackform">
+ <h3 class="row  text-center mb-4">We Value Your Feedback</h3>
+ <form id="col-lg-8  justify-content-center" class="form ">
+  <div class="mb-4 p-5">
+    <div>
+
+      <input type="text"   class="" 
+       style="background-color: rgba(0, 0, 0, 0.361);color: white;border: none;" 
+      id="feedbackText"  placeholder="Write your feedback here..." 
+      required>
+    </input>
+    </div> <div> </div>
+  </form>
+         
+                  <div class="row" id="formLinesButton">
+                    <span class=" col-lg-6 fw-semibold  text-center mt-2" style="font-size: 20px;color: white;">Your thoughts help us improve!</span>
+                    
+                    <button class="col-lg-6 mt-5" type="submit"
+                     class="btn btn-dark text-light">
+                      Submit Feedback
+                    </button>
+</div>
+</div>
+</div>
+<div class="container-fluid mt-5 my-5" data-aos="fade-up" id="contacts">
+  <h3 class="text-center text-warning mt-5 mb-4">Helpful Contacts – Bus Info & Support</h3>
   <div class="shadow-sm">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">

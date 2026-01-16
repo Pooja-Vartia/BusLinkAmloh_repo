@@ -1,7 +1,7 @@
 
   AOS.init();
 function toggleDarkMode() {
-  // it will hold the darkmode and light mode effect into web screen for user better interection 
+  // it will hold the darkmode and light mode effect into web screen for user better interaction 
   document.body.classList.toggle('dark-mode');
   
 }
@@ -217,15 +217,15 @@ new Bus(38," 15.56"," LOK SEWAK"," PATIALA-LUDHIANA", "31/RK/71"," 23.02.26", "P
 new Bus("16.00","RTC P"," NABHA-KHANNA","1057/R/22"," 01.03.2027","PB11CD0220","   15.02.2025"),
 new Bus("16.00","BABA DITTU JI ","ABHA-KANNA","132/R/22","23.02.2027","PB13V8631","  22.01.2024"),
 new Bus("16.08","PRTC S","  DHURI-MOHALI"," 329/R/98","9.01.28","PB13AL9847","  02.01.2024"),
-new Bus(39,"16.08"," TIWANA WAYS"," PATIALA-KHANNA", "567-68/CP/22"," 16.03.26", "PB11CB7797 & PB1CB7897" ,
+new Bus("16.08"," TIWANA WAYS"," PATIALA-KHANNA", "567-68/CP/22"," 16.03.26", "PB11CB7797 & PB1CB7897" ,
    "25.05.2024","25.05.2024"),
 new Bus("16.15","PRTC S","  DHURI-MOHALI"," 329/R/98","9.01.28","PB13AL9847","  02.01.2024"),
 new Bus("16.20","PRTC P"," NABHA-KHANNA","1057/R/22"," 01.03.2027","PB11CD0220","   15.02.2025"),
 new Bus("16.20","G.BUS","NABHA-N.SHAHAR","1134/R/22","26.06.2027","PB23G2645","  09.03.2023"),
-new Bus(40,"16.20"," TIWANA WAYS"," PATIALA-LUDHIANA","110/R/88"," 06.11.26", "PB11BK7897" ,"25.05.2024"),
+new Bus("16.20"," TIWANA WAYS"," PATIALA-LUDHIANA","110/R/88"," 06.11.26", "PB11BK7897" ,"25.05.2024"),
 new Bus("16.35","G.BUS","NABHA-N.SHAHAR","1134/R/22","26.06.2027","PB23G2645","  09.03.2023"),
 new Bus("16.40","PRTC P"," NABHA-KHANNA","1057/R/22"," 01.03.2027","PB11CD0220","   15.02.2025"),
-new Bus(41,"16.45"," PRTC"," PATIALA-LUDHIANA"," 129-30/R/89"," 01.12.26", "PB11CD0202", "01.02.2025"),
+new Bus("16.45"," PRTC"," PATIALA-LUDHIANA"," 129-30/R/89"," 01.12.26", "PB11CD0202", "01.02.2025"),
 new Bus("16.48","  PRTC P"," CHD-NABHA","  168/R/70","  29.09.2026"," PB65V4428"," 07.05.2023"),
 new Bus("16.55",".BUS","NABHA-N.SHAHAR ","134/R/22","26.06.2027","PB23G2645","  09.03.2023"),
 new Bus("16.55"," PRTC P"," NABHA-KHANNA"," 236/R/71"," 05.05.2027"," PB11BF7391","  09.07.2023"),
