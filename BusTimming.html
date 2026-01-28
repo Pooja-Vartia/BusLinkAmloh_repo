@@ -11,13 +11,15 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />  
+  
  
 <script src="BusTimming.js"></script>
 </head>
 <body class="container-fluid dark-mode" >
   <div id="navbar-placeholder"></div>
   <!-- 1 row = 2 x columns -->
-  <div class="row"  id="TimmingBackground">
+  <div class="row"  
+  id="TimmingBackground">
     <h1 class="container mt-5 mb-2 text-center ">NextStop Navigator</h1>
     <!-- div for buttons -->
     <div  id="buttongrid" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5 p-5">
@@ -127,14 +129,49 @@ Absolutely! With <span style="font-weight:bold;">🕒 Bus Timing</span>, you get
       </div>
     </div>
   </div>
+</div>
+
+
 <div class="container mt-5">
   <h2 class="text text-center text-light">Our BusLinkAmloh App</h2>
-<h5 class="mt-2">Simple and Easy to Use</h5>
+<h3 class="mt-2">Simple and Easy to Use</h3>
+</div>
+
+   </div>
+<div id="outerCarousel" class="container  carousel slide" data-bs-ride="carousel"> 
+  <div class="carousel-inner"> <!-- Slide 1 --> <div class="carousel-item active">
+   <div class="d-flex justify-content-center"> 
+  <img src="secondFirstGuide.JPG" class="img-fluid m-2" alt="loading">
+   <img src="clickOnSchedule.JPG" class="img-fluid m-2" alt="loading">
+    <img src="ResultTIMMING.JPG" class="img-fluid m-2" alt="loading">
+    <img src="clickOnAfternoon.JPG" class="img-fluid m-2" alt="loading"> 
+
+  </div> 
+</div>
+ <!-- Slide 2 -->
+   <div class="carousel-item">
+     <div class="d-flex justify-content-center">
+       <img src="resultAfternoon.JPG" class="img-fluid m-2" alt="loading"> 
+       <img src="clickonEvening.JPG" class="img-fluid m-2" alt="loading"> 
+       <img src="resultEvening2.JPG" class="img-fluid m-2" alt="loading"> 
+       <img src="clickonNight.JPG" class="img-fluid m-2" alt="loading"> 
+      </div>
+     </div>
+     </div>
+      <!-- Controls --> 
+       <button class="carousel-control-prev" type="button" data-bs-target="#outerCarousel" data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span> 
+      </button> 
+      <button class="carousel-control-next" type="button" data-bs-target="#outerCarousel" data-bs-slide="next"> <span class="carousel-control-next-icon"></span>
+       </button>
+       </div>
+
 </div>
 <div>
   
 
 <!-- AOS Animation JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
    fetch("TopNavbar.html")

@@ -11,99 +11,325 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" /> 
     <title>Bus Route</title>
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 20px;
-        }
-        #map{
-            height: 400px;
-            width: 100%;
-            margin-bottom: 10px;
+      #map{
+        height: 60vh;
+        width: 90%;
+        margin: 2% auto;
+        border-radius: 15px;
+            box-shadow: 0 0 50px gainsboro;
         }
         #controls{
-            margin-bottom: 10px;
-        }
-        #intro{
-            background-color: #f0f8ff;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            margin-bottom: 20px;
-        }
+            margin-bottom: 0px;
+          }
     </style>
 </head>
 <body>
-<div id="navbar-placeholder"></div>
-
-    <h2 class="mt-5">BusLink Amloh Route Planner</h2>
-    <!-- Route introduction section -->
-     <div id="intro">
-        <p>
-            <strong>BusLink Amloh</strong> is a smart travel assistent for passengers commuting between 
-            <strong>Patiala, Amloh, Khanna, Ludhiana, and Jalandhar </strong>this app helps users plan their journey by showing an interactive map and calculative estimated travel time based on selected stops. it combines official bus schedule wih Google Maps routing to give accurate and helpful travel info.
-        </p>
-     </div>
-     <div id="map"></div>
-     <div id="controls">
-        <label>From:
-            <input id="forms" type="text" placeholder="e.g. Ludhiana ">
-        </label>
-        <button type="button" onclick="calculatedRoute()">Show Route</button>
-     </div>
-<div id="output"></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-
-
+  <div id="navbar-placeholder" ></div>
+  <div class="row" id="headingRoute">
+    <h2 class=" text-warning  text text-center mt-5"  >
+      BusLink Amloh Route Planner</h2>
+    </div>
+    
+    
+    <div class="row mt-1">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p-4 text-warning" id="anchorLinks" >
+        
+    <div >
+<ol>
+  <li><a class="link-warning  text text-center " href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a></li><hr>
+  <li><a class="link-warning  text text-center " href="https://support.google.com/maps/answer/3092439" target="_blank" rel="noopener">Transit Layers Help</a></li><hr>
+  <li><a class="link-warning  text text-center " href="https://punjabtransport.org/?utm_source=copilot.com" target="_blank" rel="noopener noreferrer">Punjab Transport Department</a></li><hr>
+  <li><a class="link-warning  text text-center " href="https://www.pepsuonline.com/?utm_source=copilot.com" target="_blank" rel="noopener noreferrer">PRTC (Pepsu Road Transport Corp.)</a></li><hr>
+  <li><a class="link-warning  text text-center " href="https://www.google.com/maps/@28.9480803,77.094584,9z?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps <br>Transit</a></li><hr>
+      <li><a class="link-warning text text-center  " href="https://support.google.com/maps/answer/6142130" target="_blank" rel="noopener">Bus Departures Info</a></li><hr>
+      <li><a class="link-warning  text text-center " href="https://www.redbus.in/?utm_source=copilot.com" target="_blank" rel="noopener noreferrer">RedBus</a></li><hr>
+      <li><a class="link-warning  text text-center " href="https://support.google.com/maps/answer/7565193" target="_blank" rel="noopener">Plan Your Commute</a></li><hr>
+    </ol>
+  </div>
   
-  <script>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+  <div class="container-fluid text-center">
+    
+    <div id="controls" class="row RouteData mt-3 mx-5 d-flex flex-wrap">
+    
+    <!-- Show Route Button -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <button type="button" class="btn btn-outline-warning w-100" onclick="calculateRoute()">Show Route</button>
+    </div>
+    
+    <!-- From Input -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="input-group">
+        <span class="input-group-text bg-white  text-warning">
+          <i class="fas fa-route"></i>
+       </span>
+       <input id="from" type="text" class="form-control " placeholder="From">
+     </div>
+    </div>
+    
+    <!-- To Input -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+     <div class="input-group">
+       <span class="input-group-text bg-white  text-warning">
+         <i class="fas fa-bus"></i>
+       </span>
+       <input id="to" type="text" class="form-control " placeholder="To">
+      </div>
+    </div>
+    
+    <!-- Bus Stop Input -->
+    
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-warning text-warning">
+         <i class="fas fa-adjust"></i>
+       </span>
+       <input id="Bus_Stop" type="text" class="form-control " placeholder="BusStops">
+     </div>
+    </div>
+    
+    </div>
+      
+    
+    <div id="output" ></div>
+    <div id="map"></div>
+    <!-- Route introduction section -->
+    <div id="intro">
+        <p>
+          <strong>BusLink Amloh</strong> is a smart travel assistent for passengers commuting between 
+          <strong>Patiala, Amloh, Khanna, Ludhiana, and Jalandhar </strong>this app helps users plan their journey by showing an interactive map and calculative estimated travel time based on selected stops. it combines official bus schedule wih Google Maps routing to give accurate and helpful travel info.
+        </p>
+      </div>
+    </div>
+      
+  </div>
+  <!-- Route using individual mapping  -->
+  <div id="busstopscard" class="text justify-content-center">
+    <h2 class="text-warning mt-5 text-left mb-5">BUS STOP NEAR AMLOH ROUTE</h2>
+    <div class="row justify-content-center AreaSearch">
+       <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i> 
+                  <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+        <h5>Amloh</h5>
+             <p class="text">Amloh, Punjab 147203</p>
+            </div>
+             <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                <img src="AniaRoadAmloh.JPG" class=" img img-fluid" alt="loading">
+                <h5>Amloh, Punjab 147203</h5>
+                <p class="text">Amloh-Annian Rd; Amloh; Punjab 147203</p>
+              </div>
+             <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                <img src="Gholumajra.JPG" class=" img img-fluid" alt="loading">
+                      <h5 >Ghullo Majra</h5>
+                <p class="text">Sarpanch Harbans Singh Amloh - Sirhind Rd; Ghullu Majra; Punjab 147203</p>
+              </div>
+             <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                  <img src="GhutindBusStop3.JPG" class=" img img-fluid" alt="loading">
+                  <h5 >Ghutind Bus Stop</h5>
+                  <p class="text">Punjab 147203</p>
+                </div>
+             <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                <img src="BirBhamarsi.JPG" class=" img img-fluid" alt="loading">
+                <h5 >Bir Bhamarsi</h5>
+                <p class="text">Sarpanch Harbans Singh Amloh - Sirhind Rd; Bir Bhamarsi; Punjab 147203</p>
+              </div>
+      </div>
+      <div class="row justify-content-center AreaSearch">
+                   <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                      <img src="MianBusStand.JPG" class=" img img-fluid" alt="loading">
+                      <h5 >Mian Pur Bus Stop</h5>
+                      <p class="text">Shamash Pur; Amloh; Fatehgarh Sahib; Mian Pur; Punjab</p>
+                                          </div>
+                     <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                        <img src="meann.JPG" class=" img img-fluid" alt="loading">
+                    
+                        <h5 >Bus Stop Mian Pur</h5>
+                        <p class="text">Mian Pur; Punjab 147203</p>
+                                            </div>
+                       <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                          <img src="GhutindBusStop.JPG" class=" img img-fluid" alt="loading">
+                      
+                          <h5 >Gurdhanpur</h5>
+                          <p class="text">Bir Bhamarsi; Punjab 147203;</p>
+                                                </div>
+                       <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                          <img src="gtRoadHighWay2.JPG" class=" img img-fluid" alt="loading">
+                          <h5 >Bus Stand</h5>
+                          <p class="text">GT Road; National Highway 1; Mandi Gobindgarh; Punjab 147301</p>
+                                                </div>
+                         <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                            <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                            <h5 >Bhamarsi Bus Station</h5>
+                            <p class="text">Major Mohinder Singh Jagirdar Market Sirhind-Bhadson Rd; Punjab 147203</p>
+                                                    </div>
+        </div>
+        <div class="row justify-content-center AreaSearch">
+              <div class="col-lg-2 m-2 mb-3">
+                <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                <h5 >Jallha Bus Stand</h5>
+                <p class="text">Sirhind-Bhadson Rd; Jallha; Punjab 147203</p>
+                            </div>
+               <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                  <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                  <h5 >Ramgarh Bus Station</h5>
+                  <p class="text"> Patiala; Punjab 147203</p>
+                                </div>
+               <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                  <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                  <h5 >Mahaun Bus Stop</h5>
+                  <p class="text"> Mahaun; Punjab 141411</p>
+                                </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                    <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                    <h5 >Bus Stand</h5>
+                    <p class="text"> Sirhind-Bhadson Rd; Punjab 140405</p>
+                                    </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                    <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                    <h5 >Alipur Bus Station</h5>
+                    <p class="text">Bhadla Kheri Nud Singh Rd; Punjab 141401</p>
+                                    </div>
+        </div>
+        <div class="row justify-content-center AreaSearch">
+               <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                    <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                    <h5 >Chaswal Bus Stop</h5>
+                    <p class="text"> Amloh Rd; Bhadson; Punjab 147202</p>
+                                    </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                      <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                      <h5 >Mari Bus Stand</h5>
+                      <p class="text">Goh; Punjab 14141</p>
+                                      </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                  <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                  <h5 >Shivala Patti Bus Stand</h5>
+                  <p class="text">Goh; Punjab 141411</p>
+                                </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                    <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                    <h5 >Sirhind Bus Stand</h5>
+                    <p class="text">Sirhind Rd; Yamuna Nagar; Nawi Basti; Sirhind; Punjab 140406</p>
+                                    </div>
+                 <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-2 m-2 mb-3" >
+                <i class="fas fa-clock text-warning d-block">
+                  <strong>1.1km</strong>
+                </i>                    <img src="AmlohBusStand.JPG" class=" img img-fluid" alt="loading">
+                    <h5 >Manupur Bus Stand</h5>
+                    <p class="text">Manupur; Punjab 141411</p>
+                                    </div>
+        </div>
+</div>
 
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+     <script>
 
  let map, directionsService, directionsRenderer;
 
-    function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 30.8385, lng: 75.1746 }, 
-// Centered near Amloh
-        zoom: 9,
-      });
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 30.8385, lng: 75.1746 }, // Amloh
+    zoom: 9,
+  });
 
-      directionsService = new google.maps.DirectionsService();
-      directionsRenderer = new google.maps.DirectionsRenderer();
-      directionsRenderer.setMap(map);
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map);
+}
+
+function calculateRoute() {
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+
+  if (!from || !to) {
+    document.getElementById("output").innerHTML = "<strong>Astmated Time :</strong>Please enter both source and destination.";
+   Object.assign(document.getElementById("output").style, 
+   { 
+    backgroundColor: "rgba(17, 75, 17, 0.738)",
+    color: "black",
+    borderRadius:"10px",
+    margin:"auto 5%",
+    padding:"10px",
+   });
+      return;
+  }
+
+  const request = {
+    origin: from,
+    destination: to,
+    travelMode: google.maps.TravelMode.DRIVING,
+  };
+
+  directionsService.route(request, function(result, status) {
+    if (status === "OK") {
+      directionsRenderer.setDirections(result);
+
+      // Extract distance + duration
+      const leg = result.routes[0].legs[0];
+      const distance = leg.distance.text;
+      const duration = leg.duration.text;
+
+      document.getElementById("output").innerHTML =
+        `<strong>Distance:</strong> ${distance} <br>
+         <strong>Estimated Travel Time:</strong> ${duration}`;
+    } else {
+      document.getElementById("output").innerHTML =
+        "Route not found. Please check locations.";
     }
-
-    function calculateRoute() {
-      const from = document.getElementById("from").value;
-      const to = document.getElementById("to").value;
-
-      const request = {
-        origin: from,
-        destination: to,
-        travelMode: google.maps.TravelMode.DRIVING,
-      };
-
-      directionsService.route(request, function(result, status) {
-        if (status === "OK") {
-          directionsRenderer.setDirections(result);
-          const duration = result.routes[0].legs[0].duration.text;
-          document.getElementById("output").innerHTML = 
-            `<strong>Estimated Travel Time:</strong> ${duration}`;
-        } else {
-          document.getElementById("output").innerHTML = 
-            "Route not found. Please check locations.";
-        }
-      });
-    }
+  });
+}
 
 
+
+</script>
+<script>
   fetch("TopNavbar.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("navbar-placeholder").innerHTML = data;
     });
 </script>
-
   <script>
     AOS.init();
     </script>

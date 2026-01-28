@@ -353,3 +353,4 @@ resultsDiv.appendChild(heading);
       alert("Thank you for your feedback!");
     }
   });
+  

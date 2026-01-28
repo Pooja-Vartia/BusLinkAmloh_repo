@@ -305,3 +305,93 @@
   font-size: 14px;
   color: #555;
 }
+#outerCarousel img{
+  border: 5px solid white;
+ border-radius: 10px;
+}
+#headingRoute{
+   background-position: center ;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        background-attachment: fixed; 
+        font-family:'Times New Roman', Times, serif;
+                 /* overflow-y: auto;  */
+           font-family: Arial, sans-serif;
+           margin-top: 5%
+  
+}
+#headingRoute h2{
+  font-weight: bold;
+  font-size: 30px;
+  
+}
+.RouteData li ,
+.RouteData input{
+  border: none;
+  outline: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  /* box-shadow: 0 0 5px gainsboro; */
+  border-radius: 10px;
+}
+.input-group{
+  box-shadow: 0 0 10px gainsboro;
+  border-radius: 5px;
+}
+.input-group:hover{
+ color: white;
+ border-bottom: 2px solid rgb(236, 172, 54);
+ transform:scaleY(1.5);
+  transition:background-color 1s ease-out, transform 1s ease-out;
+  box-shadow: 0 0 19px rgb(236, 172, 54);
+
+}
+.input-group span{
+  border: none;
+}
+
+
+.col-lg-2 i {
+  display: inline-flex;
+  align-items: center;
+}
+
+.col-lg-2 input {
+  display: inline-block;
+
+}
+
+.col-lg-2 input:focus{
+  outline: 0;
+}
+
+input.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+#anchorLinks {
+  box-shadow: 0 0 15px black;
+  border: none;
+ height: 90%;
+  border-radius: 10px;
+}
+#anchorLinks a{
+  font-weight: bold;
+text-decoration: none;
+}
+.AreaSearch div{
+  padding: 1%;
+  border-bottom: 2px solid grey;
+  box-shadow: 0 0 10px gainsboro;
+}
+
+.AreaSearch img:hover{
+  transform: scale(310%);
+  border: 4px solid redd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(231, 165, 44, 0.462);
+  color: rgba(17, 75, 17, 0.738);
+}
+  
